@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HiddingPlace : MonoBehaviour
 {
-    public float speed = -0.001f;
+    public float speed = -10f;
     // Start is called before the first frame update
     void Start()
     {
