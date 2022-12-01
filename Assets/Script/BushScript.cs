@@ -10,7 +10,6 @@ public class BushScript : MonoBehaviour,IClicked
         if (Dog.activeInHierarchy == true)
             Dog.SetActive(false);
         else
-            Dog.SetActive(true);
-        
+            Dog.SetActive(true);        
     }
 }
