@@ -5,7 +5,9 @@ using UnityEngine.Events;
 
 public class PoucetBehaviour : MonoBehaviour
 {
-    public UnityEvent<bool> OnTurningEnded;
+    public UnityEvent OnTurningEnded;
+    //public bool IsTurning = false;
+    Animator animator;
 
     // declencher le retournement
     // check si dog est actif
@@ -14,9 +16,15 @@ public class PoucetBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
+    public void TurningStart()
+    {
+        animator.SetBool("IsTurning", true);
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+            OnTurningEnded.Invoke();
+    }
     // Update is called once per frame
     void Update()
     {
