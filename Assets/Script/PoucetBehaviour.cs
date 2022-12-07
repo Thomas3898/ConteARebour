@@ -22,12 +22,13 @@ public class PoucetBehaviour : MonoBehaviour
     public void TurningStart()
     {
         animator.SetBool("IsTurning", true);
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
-            OnTurningEnded.Invoke();
+        
     }
     // Update is called once per frame
     void Update()
     {
-        
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("RotationOut"))
+            OnTurningEnded.Invoke();
     }
+    
 }

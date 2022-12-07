@@ -38,5 +38,6 @@ public class DOG : MonoBehaviour
     {
         gameObject.SetActive(true);
         PoucetRef.GetComponent<Animator>().SetBool("IsTurning", false);
+        crumbsToEat++;
     }
 }
